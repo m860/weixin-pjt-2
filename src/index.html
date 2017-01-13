@@ -9,6 +9,16 @@
     <% } %>
 </head>
 <body>
+<section class="page-1">
+    <button>page-2</button>
+</section>
+<section class="page-2 page-init">
+    <button>page-3</button>
+    <button class="btn-back">back</button>
+</section>
+<section class="page-3 page-init">
+    <button class="btn-back">back</button>
+</section>
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
 <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
 <% } %>

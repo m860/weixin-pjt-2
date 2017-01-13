@@ -1,0 +1,31 @@
+
+html, body
+  height: 100%
+  overflow: hidden
+
+.page
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  transition: all 0.5s
+
+.page-init
+  transform: translateX(100%)
+
+.page-active
+  transform: translateX(0)
+
+.page-1, .page-2, .page-3
+  @extend .page
+
+.page-1
+  z-index: 10
+  background-color: red
+.page-2
+  z-index: 20
+  background-color: green
+.page-3
+  z-index: 30
+  background-color: blue

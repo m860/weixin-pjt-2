@@ -2,7 +2,9 @@
   "parser": "babel-eslint",
   "extends": ["eslint:recommended"],
   "globals":{
-
+    "$":true,
+    "jQuery":true,
+    "createjs":true
   },
   "env":{
     "browser":true,

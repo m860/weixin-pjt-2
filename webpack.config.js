@@ -31,12 +31,11 @@ var plugins = [
 	new webpack.optimize.CommonsChunkPlugin({
 		name: "vendor"
 		, filename: "vendor.bundle.js"
-		, minChunks: 2
-		, children: true
 	})
 	//global module
 	, new webpack.ProvidePlugin({
-
+		$:'jquery',
+		preload:'preload-js'
 	})
 
 	//clean dist
@@ -57,11 +56,13 @@ if (isProduction()) {
 	//package style
 	plugins.push(new ExtractTextPlugin("[contenthash].css"));
 	//compress javascript
+	/*
 	plugins.push(new webpack.optimize.UglifyJsPlugin({
 		compress: {
 			warnings: false
 		}
 	}));
+	*/
 	plugins.push(new webpack.optimize.DedupePlugin());
 }
 else {
@@ -70,9 +71,11 @@ else {
 
 module.exports = {
 	entry: {
-		index: "./src/index.js",
-		vendor: [
-			"babel-polyfill"
+		index: "./src/index.js"
+		,vendor: [
+			// "babel-polyfill",
+			"jquery",
+			"preload-js"
 		]
 	}
 	, output: output
