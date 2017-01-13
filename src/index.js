@@ -133,6 +133,7 @@ $('.redbag').css({
 //type 10 = 10元
 //type 100 = 100元
 //type ticket = 体验券
+//type none = 没有中奖
 function showRedbag(type){
 	$('.page-2 .game,.page-2 .btn-start').addClass('hidden');
 	$('.page-2 .redbag,.page-2 .btn-back,.page-2 .left-game-times').removeClass('hidden');
@@ -156,7 +157,7 @@ function showRedbag(type){
 			url=require('./assets/img/redbag-ticket.png');
 			break;
 		default:
-			url=require('./assets/img/redbag1.png');
+			url=require('./assets/img/redbag-none.png');
 	}
 	redbag.css('background-image',`url('${url}')`);
 }
