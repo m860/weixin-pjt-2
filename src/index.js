@@ -135,7 +135,7 @@ $('.redbag').css({
 //type ticket = 体验券
 function showRedbag(type){
 	$('.page-2 .game,.page-2 .btn-start').addClass('hidden');
-	$('.page-2 .redbag,.page-2 .btn-back').removeClass('hidden');
+	$('.page-2 .redbag,.page-2 .btn-back,.page-2 .left-game-times').removeClass('hidden');
 	$('.btns-wrapper').removeClass('hidden2');
 	let redbag=$('.page-2 .redbag');
 	let url;

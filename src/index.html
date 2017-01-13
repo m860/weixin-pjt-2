@@ -22,7 +22,9 @@
 <section class="page-2 page-init">
     <div class="begin"></div>
     <div class="game hidden"></div>
-    <div class="redbag hidden"></div>
+    <div class="redbag hidden">
+        <div class="left-game-times hidden">还剩0次抽奖机会</div>
+    </div>
     <div class="btns-wrapper hidden2">
         <img class="btn-start" src="assets/img/btn-start.png">
         <img class="btn-back hidden" src="assets/img/back.png">
@@ -33,9 +35,7 @@
     </div>
     <img class="footer-1" src="assets/img/footer-1.png">
 </section>
-<section class="page-3 page-init">
-    <button class="btn-back">back</button>
-</section>
+
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
 <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
 <% } %>
