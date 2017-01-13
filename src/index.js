@@ -124,10 +124,41 @@ let eleFlower=$('.progress-wrapper>img')
 	,eleProgressText=$('.progress-text');
 let progressPos=eleProgressValue.position();
 
-function showRedbag(){
+$('.redbag').css({
+	height:`${window.innerWidth}px`
+});
+
+//type 1 = 1元
+//type 5 = 5元
+//type 10 = 10元
+//type 100 = 100元
+//type ticket = 体验券
+function showRedbag(type){
 	$('.page-2 .game,.page-2 .btn-start').addClass('hidden');
 	$('.page-2 .redbag,.page-2 .btn-back').removeClass('hidden');
 	$('.btns-wrapper').removeClass('hidden2');
+	let redbag=$('.page-2 .redbag');
+	let url;
+	switch (type){
+		case '1':
+			url=require('./assets/img/redbag1.png');
+			break;
+		case '5':
+			url=require('./assets/img/redbag5.png');
+			break;
+		case '10':
+			url=require('./assets/img/redbag10.png');
+			break;
+		case '100':
+			url=require('./assets/img/redbag100.png');
+			break;
+		case 'ticket':
+			url=require('./assets/img/redbag-ticket.png');
+			break;
+		default:
+			url=require('./assets/img/redbag1.png');
+	}
+	redbag.css('background-image',`url('${url}')`);
 }
 
 loadAssets(event=>{
