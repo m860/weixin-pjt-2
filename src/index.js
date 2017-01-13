@@ -43,6 +43,41 @@ let resources=[
 	,{id:'kf-1-35',src:require('./assets/img/kf-scene-1/35.png')}
 	,{id:'kf-1-36',src:require('./assets/img/kf-scene-1/36.png')}
 	,{id:'kf-1-37',src:require('./assets/img/kf-scene-1/37.png')}
+	,{id:'kf-1-38',src:require('./assets/img/kf-scene-1/38.png')}
+	,{id:'kf-1-39',src:require('./assets/img/kf-scene-1/39.png')}
+	,{id:'kf-1-40',src:require('./assets/img/kf-scene-1/40.png')}
+	,{id:'kf-1-41',src:require('./assets/img/kf-scene-1/41.png')}
+	,{id:'kf-1-42',src:require('./assets/img/kf-scene-1/42.png')}
+	,{id:'kf-1-43',src:require('./assets/img/kf-scene-1/43.png')}
+	,{id:'kf-1-44',src:require('./assets/img/kf-scene-1/44.png')}
+	,{id:'kf-1-45',src:require('./assets/img/kf-scene-1/45.png')}
+	,{id:'kf-1-46',src:require('./assets/img/kf-scene-1/46.png')}
+	,{id:'kf-1-47',src:require('./assets/img/kf-scene-1/47.png')}
+	,{id:'kf-1-48',src:require('./assets/img/kf-scene-1/48.png')}
+	,{id:'kf-1-49',src:require('./assets/img/kf-scene-1/49.png')}
+	,{id:'kf-1-50',src:require('./assets/img/kf-scene-1/50.png')}
+	,{id:'kf-1-51',src:require('./assets/img/kf-scene-1/51.png')}
+	,{id:'kf-1-52',src:require('./assets/img/kf-scene-1/52.png')}
+	,{id:'kf-1-53',src:require('./assets/img/kf-scene-1/53.png')}
+	,{id:'kf-1-54',src:require('./assets/img/kf-scene-1/54.png')}
+	,{id:'kf-1-55',src:require('./assets/img/kf-scene-1/55.png')}
+	,{id:'kf-1-56',src:require('./assets/img/kf-scene-1/56.png')}
+	,{id:'kf-1-57',src:require('./assets/img/kf-scene-1/57.png')}
+	,{id:'kf-1-58',src:require('./assets/img/kf-scene-1/58.png')}
+	,{id:'kf-1-59',src:require('./assets/img/kf-scene-1/59.png')}
+	,{id:'kf-1-60',src:require('./assets/img/kf-scene-1/60.png')}
+	,{id:'kf-1-61',src:require('./assets/img/kf-scene-1/61.png')}
+	,{id:'kf-1-62',src:require('./assets/img/kf-scene-1/62.png')}
+	,{id:'kf-1-63',src:require('./assets/img/kf-scene-1/63.png')}
+	,{id:'kf-1-64',src:require('./assets/img/kf-scene-1/64.png')}
+	,{id:'kf-1-65',src:require('./assets/img/kf-scene-1/65.png')}
+	,{id:'kf-1-66',src:require('./assets/img/kf-scene-1/66.png')}
+	,{id:'kf-1-67',src:require('./assets/img/kf-scene-1/67.png')}
+	,{id:'kf-1-68',src:require('./assets/img/kf-scene-1/68.png')}
+	,{id:'kf-1-69',src:require('./assets/img/kf-scene-1/69.png')}
+	,{id:'kf-1-70',src:require('./assets/img/kf-scene-1/70.png')}
+	,{id:'kf-1-71',src:require('./assets/img/kf-scene-1/71.png')}
+	,{id:'kf-1-72',src:require('./assets/img/kf-scene-1/72.png')}
 	,{id:'flower',src:require('./assets/img/flower.png')}
 ];
 
@@ -89,6 +124,12 @@ let eleFlower=$('.progress-wrapper>img')
 	,eleProgressText=$('.progress-text');
 let progressPos=eleProgressValue.position();
 
+function showRedbag(){
+	$('.page-2 .game,.page-2 .btn-start').addClass('hidden');
+	$('.page-2 .redbag,.page-2 .btn-back').removeClass('hidden');
+	$('.btns-wrapper').removeClass('hidden2');
+}
+
 loadAssets(event=>{
 	let value=Math.floor(event.progress*100);
     eleProgressText.text(`${value}%`)
@@ -108,12 +149,33 @@ loadAssets(event=>{
 },()=>{
     setTimeout(()=>{
     	goto('.page-2',()=>{
-            $('.begin').addClass('begin-active').css({
+            let eleBegin=$('.begin')
+				,eleBtnsWrapper=$('.btns-wrapper')
+				,btnStart=$('.btn-start')
+				,btnBack=$('.page-2 .btn-back')
+				,eleGame=$('.page-2 .game');
+			btnBack.on('click',event=>{
+				btnBack.addClass('hidden')
+				btnStart.removeClass('hidden');
+				eleGame.addClass('hidden');
+				eleBegin.removeClass('hidden');
+			})
+    		eleBegin.addClass('begin-active').css({
             	height:`${window.innerWidth}px`
+			}).on('animationend',()=>{
+				eleBtnsWrapper.removeClass('hidden2')
+				eleBegin.attr('class','loop');
+				btnStart.unbind().on('click',()=>{
+					eleBegin.addClass('hidden')
+					eleBtnsWrapper.addClass('hidden2')
+					eleGame.removeClass('hidden').css({
+						height:`${window.innerWidth}px`
+					}).on('animationend',event=>{
+						showRedbag()
+					})
+				});
 			});
-            setTimeout(()=>{
-				$('.btn-start').toggleClass('hide')
-			},10*1000)
+
 		})
     },500);
 })

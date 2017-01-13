@@ -7,8 +7,11 @@ html, body
 *
   display: flex !important
 
-.hide
+.hidden
   display: none !important
+
+.hidden2
+  visibility: hidden
 
 .page
   position: absolute
@@ -83,88 +86,101 @@ html, body
   flex-direction: column
   justify-content: center
   align-items: center
-  .btn-start
-    width: 26%
+  .btns-wrapper
+    width: 100%
+    justify-content: center
+    align-items: center
     margin-top: 5px
+    flex-direction: column
+    .btn-start,.btn-back
+      width: 30%
+    .links
+      justify-content: space-around
+      width: 30%
+      margin-top: 20px
+      a
+        font-size: 1.2rem
+        color: #e6ce6e
 .page-3
   z-index: 30
   background-color: blue
 
 @keyframes kf-begin
-  #{2.7*0}%
+  $unit: 100/29
+  #{$unit*0}%
     background-image: url('../img/kf-scene-1/1.png')
-  #{2.7*1}%
+  #{$unit*1}%
     background-image: url('../img/kf-scene-1/2.png')
-  #{2.7*2}%
+  #{$unit*2}%
     background-image: url('../img/kf-scene-1/3.png')
-  #{2.7*3}%
+  #{$unit*3}%
     background-image: url('../img/kf-scene-1/4.png')
-  #{2.7*4}%
+  #{$unit*4}%
     background-image: url('../img/kf-scene-1/5.png')
-  #{2.7*5}%
+  #{$unit*5}%
     background-image: url('../img/kf-scene-1/6.png')
-  #{2.7*6}%
+  #{$unit*6}%
     background-image: url('../img/kf-scene-1/7.png')
-  #{2.7*7}%
+  #{$unit*7}%
     background-image: url('../img/kf-scene-1/8.png')
-  #{2.7*8}%
+  #{$unit*8}%
     background-image: url('../img/kf-scene-1/9.png')
-  #{2.7*9}%
+  #{$unit*9}%
     background-image: url('../img/kf-scene-1/10.png')
-  #{2.7*10}%
+  #{$unit*10}%
     background-image: url('../img/kf-scene-1/11.png')
-  #{2.7*11}%
+  #{$unit*11}%
     background-image: url('../img/kf-scene-1/12.png')
-  #{2.7*12}%
+  #{$unit*12}%
     background-image: url('../img/kf-scene-1/13.png')
-  #{2.7*13}%
+  #{$unit*13}%
     background-image: url('../img/kf-scene-1/14.png')
-  #{2.7*14}%
+  #{$unit*14}%
     background-image: url('../img/kf-scene-1/15.png')
-  #{2.7*15}%
+  #{$unit*15}%
     background-image: url('../img/kf-scene-1/16.png')
-  #{2.7*16}%
+  #{$unit*16}%
     background-image: url('../img/kf-scene-1/17.png')
-  #{2.7*17}%
+  #{$unit*17}%
     background-image: url('../img/kf-scene-1/18.png')
-  #{2.7*18}%
+  #{$unit*18}%
     background-image: url('../img/kf-scene-1/19.png')
-  #{2.7*19}%
+  #{$unit*19}%
     background-image: url('../img/kf-scene-1/20.png')
-  #{2.7*20}%
+  #{$unit*20}%
     background-image: url('../img/kf-scene-1/21.png')
-  #{2.7*21}%
+  #{$unit*21}%
     background-image: url('../img/kf-scene-1/22.png')
-  #{2.7*22}%
+  #{$unit*22}%
     background-image: url('../img/kf-scene-1/23.png')
-  #{2.7*23}%
+  #{$unit*23}%
     background-image: url('../img/kf-scene-1/24.png')
-  #{2.7*24}%
+  #{$unit*24}%
     background-image: url('../img/kf-scene-1/25.png')
-  #{2.7*25}%
+  #{$unit*25}%
     background-image: url('../img/kf-scene-1/26.png')
-  #{2.7*26}%
+  #{$unit*26}%
     background-image: url('../img/kf-scene-1/27.png')
-  #{2.7*27}%
+  #{$unit*27}%
     background-image: url('../img/kf-scene-1/28.png')
-  #{2.7*28}%
+  #{$unit*28}%
     background-image: url('../img/kf-scene-1/29.png')
-  #{2.7*29}%
-    background-image: url('../img/kf-scene-1/30.png')
-  #{2.7*30}%
-    background-image: url('../img/kf-scene-1/31.png')
-  #{2.7*31}%
-    background-image: url('../img/kf-scene-1/32.png')
-  #{2.7*32}%
-    background-image: url('../img/kf-scene-1/33.png')
-  #{2.7*33}%
-    background-image: url('../img/kf-scene-1/34.png')
-  #{2.7*34}%
-    background-image: url('../img/kf-scene-1/35.png')
-  #{2.7*35}%
-    background-image: url('../img/kf-scene-1/36.png')
-  #{2.7*36}%
-    background-image: url('../img/kf-scene-1/37.png')
+  //#{$unit*29}%
+  //  background-image: url('../img/kf-scene-1/30.png')
+  //#{$unit*30}%
+  //  background-image: url('../img/kf-scene-1/31.png')
+  //#{$unit*31}%
+  //  background-image: url('../img/kf-scene-1/32.png')
+  //#{$unit*32}%
+  //  background-image: url('../img/kf-scene-1/33.png')
+  //#{$unit*33}%
+  //  background-image: url('../img/kf-scene-1/34.png')
+  //#{$unit*34}%
+  //  background-image: url('../img/kf-scene-1/35.png')
+  //#{$unit*35}%
+  //  background-image: url('../img/kf-scene-1/36.png')
+  //#{$unit*36}%
+  //  background-image: url('../img/kf-scene-1/37.png')
 .begin
   background-repeat: no-repeat
   background-size: 100%
@@ -176,6 +192,111 @@ html, body
   animation-duration: 5s
   animation-iteration-count: 1
   animation-timing-function: steps(1)
-  background-image: url('../img/kf-scene-1/37.png')
+  background-image: url('../img/kf-scene-1/29.png')
 
+@keyframes kf-loop
+  $unit: 100/24
+  #{$unit*0}%
+    background-image: url('../img/kf-scene-1/29.png')
+  #{$unit*1}%
+    background-image: url('../img/kf-scene-1/30.png')
+  #{$unit*2}%
+    background-image: url('../img/kf-scene-1/31.png')
+  #{$unit*3}%
+    background-image: url('../img/kf-scene-1/32.png')
+  #{$unit*4}%
+    background-image: url('../img/kf-scene-1/33.png')
+  #{$unit*5}%
+    background-image: url('../img/kf-scene-1/34.png')
+  #{$unit*6}%
+    background-image: url('../img/kf-scene-1/35.png')
+  #{$unit*7}%
+    background-image: url('../img/kf-scene-1/36.png')
+  #{$unit*8}%
+    background-image: url('../img/kf-scene-1/37.png')
+  #{$unit*9}%
+    background-image: url('../img/kf-scene-1/38.png')
+  #{$unit*10}%
+    background-image: url('../img/kf-scene-1/39.png')
+  #{$unit*11}%
+    background-image: url('../img/kf-scene-1/40.png')
+  #{$unit*12}%
+    background-image: url('../img/kf-scene-1/41.png')
+  #{$unit*13}%
+    background-image: url('../img/kf-scene-1/42.png')
+  #{$unit*14}%
+    background-image: url('../img/kf-scene-1/43.png')
+  #{$unit*15}%
+    background-image: url('../img/kf-scene-1/44.png')
+  #{$unit*16}%
+    background-image: url('../img/kf-scene-1/45.png')
+  #{$unit*17}%
+    background-image: url('../img/kf-scene-1/46.png')
+  #{$unit*18}%
+    background-image: url('../img/kf-scene-1/47.png')
+  #{$unit*19}%
+    background-image: url('../img/kf-scene-1/48.png')
+  #{$unit*20}%
+    background-image: url('../img/kf-scene-1/49.png')
+  #{$unit*21}%
+    background-image: url('../img/kf-scene-1/50.png')
+  #{$unit*22}%
+    background-image: url('../img/kf-scene-1/51.png')
+  #{$unit*23}%
+    background-image: url('../img/kf-scene-1/52.png')
 
+.loop
+  animation-name: kf-loop
+  animation-duration: 5s
+  animation-iteration-count: infinite
+  animation-timing-function: steps(1)
+  width: 100%
+
+@keyframes kf-game
+  $unit: 100/20
+  #{$unit*0}%
+    background-image: url('../img/kf-scene-1/53.png')
+  #{$unit*1}%
+    background-image: url('../img/kf-scene-1/54.png')
+  #{$unit*2}%
+    background-image: url('../img/kf-scene-1/55.png')
+  #{$unit*3}%
+    background-image: url('../img/kf-scene-1/56.png')
+  #{$unit*4}%
+    background-image: url('../img/kf-scene-1/57.png')
+  #{$unit*5}%
+    background-image: url('../img/kf-scene-1/58.png')
+  #{$unit*6}%
+    background-image: url('../img/kf-scene-1/59.png')
+  #{$unit*7}%
+    background-image: url('../img/kf-scene-1/60.png')
+  #{$unit*8}%
+    background-image: url('../img/kf-scene-1/61.png')
+  #{$unit*9}%
+    background-image: url('../img/kf-scene-1/62.png')
+  #{$unit*10}%
+    background-image: url('../img/kf-scene-1/63.png')
+  #{$unit*11}%
+    background-image: url('../img/kf-scene-1/64.png')
+  #{$unit*12}%
+    background-image: url('../img/kf-scene-1/65.png')
+  #{$unit*13}%
+    background-image: url('../img/kf-scene-1/66.png')
+  #{$unit*14}%
+    background-image: url('../img/kf-scene-1/67.png')
+  #{$unit*15}%
+    background-image: url('../img/kf-scene-1/68.png')
+  #{$unit*16}%
+    background-image: url('../img/kf-scene-1/69.png')
+  #{$unit*17}%
+    background-image: url('../img/kf-scene-1/70.png')
+  #{$unit*18}%
+    background-image: url('../img/kf-scene-1/71.png')
+  #{$unit*19}%
+    background-image: url('../img/kf-scene-1/72.png')
+.game
+  animation-name: kf-game
+  animation-duration: 5s
+  animation-iteration-count: 1
+  animation-timing-function: steps(1)
+  width: 100%
