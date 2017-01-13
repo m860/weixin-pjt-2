@@ -1,0 +1,29 @@
+{
+  "name": "weixin-pjt-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^3.13.0"
+  },
+  "devDependencies": {
+    "livereload": "^0.6.0",
+    "node-sass": "^3.13.0",
+    "node-watch": "^0.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sass": "node scripts/build-sass.js",
+    "livereload":"node node_modules/livereload/bin/livereload.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m860/weixin-pjt-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m860/weixin-pjt-1/issues"
+  },
+  "homepage": "https://github.com/m860/weixin-pjt-1#readme"
+}
