@@ -3,7 +3,7 @@ html, body
   height: 100%
   overflow: hidden
   font-size: 66.6%
-
+$viewHeight: auto
 *
   display: flex !important
 
@@ -20,12 +20,6 @@ html, body
   bottom: 0
   right: 0
   transition: all 0.5s
-
-.footer-1
-  position: absolute
-  bottom: 0
-  left: 0
-  right: 0
 
 .page-init
   transform: translateX(100%)
@@ -80,9 +74,10 @@ html, body
 
 .page-2
   z-index: 20
-  background-image: url('../img/bg-1.png')
-  background-repeat: no-repeat
-  background-size: 100%
+  background-image: url('../img/footer-1.png'),url('../img/bg-1.png')
+  background-repeat: no-repeat,no-repeat
+  background-size: 100% auto,100% auto
+  background-position: bottom left,top left
   flex-direction: column
   justify-content: center
   align-items: center
@@ -183,7 +178,7 @@ html, body
   //  background-image: url('../img/kf-scene-1/37.png')
 .begin
   background-repeat: no-repeat
-  background-size: 100%
+  background-size: 100% $viewHeight
   background-position: center
   width: 100%
   background-image: url('../img/kf-scene-1/1.png')
@@ -244,13 +239,19 @@ html, body
     background-image: url('../img/kf-scene-1/51.png')
   #{$unit*23}%
     background-image: url('../img/kf-scene-1/52.png')
+  100%
+    background-image: url('../img/kf-scene-1/29.png')
+
 
 .loop
   animation-name: kf-loop
   animation-duration: 5s
+  background-size: 100% $viewHeight
   animation-iteration-count: infinite
   animation-timing-function: steps(1)
   width: 100%
+  background-repeat: no-repeat
+  background-position: center
 
 @keyframes kf-game
   $unit: 100/20
@@ -300,15 +301,17 @@ html, body
   animation-iteration-count: 1
   animation-timing-function: steps(1)
   width: 100%
+  background-position: center center
+  background-repeat: no-repeat
 
 .redbag
   width: 100%
   background-repeat: no-repeat
-  background-size: 100%
+  background-size: 80%
+  background-position: center
   flex-direction: column
   justify-content: flex-end
   align-items: center
 .left-game-times
   font-size: 1.3rem
   color: white
-  margin-bottom: 50px

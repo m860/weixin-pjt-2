@@ -124,8 +124,10 @@ let eleFlower=$('.progress-wrapper>img')
 	,eleProgressText=$('.progress-text');
 let progressPos=eleProgressValue.position();
 
+let viewHeight=window.innerWidth*0.70;
+
 $('.redbag').css({
-	height:`${window.innerWidth}px`
+	height:`${viewHeight}px`
 });
 
 //type 1 = 1元
@@ -193,7 +195,7 @@ loadAssets(event=>{
 				eleBegin.removeClass('hidden');
 			})
     		eleBegin.addClass('begin-active').css({
-            	height:`${window.innerWidth}px`
+            	height:`${viewHeight}px`
 			}).on('animationend',()=>{
 				eleBtnsWrapper.removeClass('hidden2')
 				eleBegin.attr('class','loop');
@@ -201,7 +203,7 @@ loadAssets(event=>{
 					eleBegin.addClass('hidden')
 					eleBtnsWrapper.addClass('hidden2')
 					eleGame.removeClass('hidden').css({
-						height:`${window.innerWidth}px`
+						height:`${viewHeight}px`
 					}).on('animationend',event=>{
 						showRedbag()
 					})
