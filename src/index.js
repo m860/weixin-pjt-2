@@ -101,7 +101,7 @@ function loadAssets(onProgress = ()=> {
 	assets.on('complete', event=> {
 		onComplete(event, assets);
 	});
-	assets.on('fileprogress', event=> {
+	assets.on('progress', event=> {
 		onProgress(event);
 	})
 	assets.load();
@@ -125,7 +125,10 @@ let eleFlower=$('.progress-wrapper>img')
 let progressPos=eleProgressValue.position();
 
 let viewHeight=window.innerWidth*0.70;
-
+eleFlower.css({
+	left:eleProgressValue.position().left,
+	visibility:'visible'
+})
 $('.redbag').css({
 	height:`${viewHeight}px`
 });
@@ -209,6 +212,7 @@ loadAssets(event=>{
 				btnStart.removeClass('hidden');
 				eleGame.addClass('hidden');
 				eleBegin.removeClass('hidden');
+				$('.page-2 .redbag').addClass('hidden')
 			})
     		eleBegin.addClass('begin-active').css({
             	height:`${viewHeight}px`
