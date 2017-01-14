@@ -220,12 +220,14 @@ loadAssets(event=>{
 				eleBtnsWrapper.removeClass('hidden2')
 				eleBegin.attr('class','loop');
 
-				btnStart.unbind().on('mousedown touchstart webkitTouchStart',()=>{
+				btnStart.unbind().on('mousedown touchstart webkitTouchStart',(event)=>{
+					event.preventDefault();
 					eleBegin.addClass('hidden')
 					eleGame.removeClass('hidden').css({
 						height:`${viewHeight}px`
 					})
-				}).on('mouseup touchend webkitTouchEnd',()=>{
+				}).on('mouseup touchend webkitTouchEnd',(event)=>{
+					event.preventDefault();
 					eleGame.unbind().on('animationend webkitAnimationEnd',event=>{
 						eleGame.addClass('hidden')
 						showRedbag()
