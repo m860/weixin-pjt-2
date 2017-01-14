@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <title></title>
     <% for (var css in htmlWebpackPlugin.files.css) { %>
     <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
@@ -29,8 +29,61 @@
         <img class="btn-start" src="assets/img/btn-start.png">
         <img class="btn-back hidden" src="assets/img/back.png">
         <div class="links">
-            <a>活动规则</a>
-            <a>我的中奖</a>
+            <a class="btn-rule">活动规则</a>
+            <a class="btn-result">我的中奖</a>
+        </div>
+    </div>
+</section>
+<section id="rule" class="dialog hidden">
+    <div class="close">
+        <img src="assets/img/btn-close.png">
+    </div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="title">活动规则</div>
+            <div class="text">
+                <ol start="1">
+                    <li>1 : 每人每天可以抽三次奖,连续抽奖的天数越多,抽到高额奖励的机会越大.</li>
+                    <li>2 : 参加抽奖,并有机会获得不同面值的红包(1元,2元,5元)和清晰优惠券.</li>
+                    <li>3 : 参加抽奖,并有机会获.</li>
+                </ol>
+            </div>
+            <p class="date-region">活动时间:2017年1月27日-1月30日</p>
+        </div>
+    </div>
+</section>
+
+<section id="result" class="dialog hidden">
+    <div class="close">
+        <img src="assets/img/btn-close.png">
+    </div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="title">我的中奖</div>
+            <div class="text">
+                <p class="hidden">暂无中奖信息</p>
+                <div class="reward hidden">
+                    现金红包<span>1</span>元
+                </div>
+                <div class="reward">
+                    小R管家清洁养护服务<br>体验券
+                </div>
+                <div class="form">
+                    <p>获奖码</p>
+                    <p>928349823489023890432890489</p>
+                    <div>
+                        <label>手机号</label>
+                        <input type="number">
+                    </div>
+                    <button>确认</button>
+                    <div>
+                        <label>手机号</label>
+                        <label>13111111111</label>
+                    </div>
+                    <button>修改</button>
+                </div>
+            </div>
+            <p class="date-region">活动时间:2017年1月27日-1月30日</p>
         </div>
     </div>
 </section>

@@ -164,6 +164,22 @@ function showRedbag(type){
 	redbag.css('background-image',`url('${url}')`);
 }
 
+// 显示弹窗
+function toggleDialog(selector){
+	$(selector).toggleClass('hidden').find('.close').on('click',()=>{
+		$(selector).toggleClass('hidden');
+	})
+}
+function showRule(){
+	toggleDialog('#rule');
+}
+function showResult(){
+	toggleDialog('#result');
+}
+
+$('.btn-rule').on('click',showRule)
+$('.btn-result').on('click',showResult)
+
 loadAssets(event=>{
 	let value=Math.floor(event.progress*100);
     eleProgressText.text(`${value}%`)
