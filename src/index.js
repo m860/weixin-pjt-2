@@ -43,12 +43,14 @@ let resources=[
 	,{id:'kf-1-35',src:require('./assets/img/kf-scene-1/35.png')}
 	,{id:'kf-1-36',src:require('./assets/img/kf-scene-1/36.png')}
 	,{id:'kf-1-37',src:require('./assets/img/kf-scene-1/37.png')}
+	,{id:'flower',src:require('./assets/img/flower.png')}
 ];
 
 
-function goto(selector) {
+function goto(selector,callback=()=>{}) {
 	$(selector).toggleClass('page-init');
 	routerSelector.push(selector);
+	setTimeout(callback,500);
 }
 
 function back() {
@@ -82,7 +84,36 @@ $('.page-2 button.btn-back').bind('click', ()=> {
 	back()
 })
 
-loadAssets(()=>{},()=>{
-	let eleBegin=$('.begin')
-	eleBegin.addClass('begin-active');
+let eleFlower=$('.progress-wrapper>img')
+	,eleProgressValue=$('.progress-value')
+	,eleProgressText=$('.progress-text');
+let progressPos=eleProgressValue.position();
+
+loadAssets(event=>{
+	let value=Math.floor(event.progress*100);
+    eleProgressText.text(`${value}%`)
+    eleProgressValue.css({width:`${value}%`})
+	if(value<100) {
+        eleFlower.css({
+            left: progressPos.left + eleProgressValue.width()
+        })
+    }
+    else{
+    	eleFlower.remove();
+        eleProgressValue.addClass('progress-value-full');
+
+
+	}
+
+},()=>{
+    setTimeout(()=>{
+    	goto('.page-2',()=>{
+            $('.begin').addClass('begin-active').css({
+            	height:`${window.innerWidth}px`
+			});
+            setTimeout(()=>{
+				$('.btn-start').toggleClass('hide')
+			},10*1000)
+		})
+    },500);
 })

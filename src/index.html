@@ -11,10 +11,18 @@
 <body>
 <section class="page-1">
     <div class="logo"></div>
+    <div class="progress-wrapper">
+        <img src="assets/img/flower.png">
+        <div class="progress">
+            <div class="progress-value" style="width:80%"></div>
+        </div>
+    </div>
+    <div class="progress-text">50%</div>
 </section>
 <section class="page-2 page-init">
-    <button>page-3</button>
-    <button class="btn-back">back</button>
+    <div class="begin"></div>
+    <img class="btn-start hide" src="assets/img/btn-start.png">
+    <img class="footer-1" src="assets/img/footer-1.png">
 </section>
 <section class="page-3 page-init">
     <button class="btn-back">back</button>
@@ -24,9 +32,9 @@
 <% } %>
 <script>
     var b = document.documentElement;
-    b.setAttribute('data-useragent',  navigator.userAgent);
-    b.setAttribute('data-platform', navigator.platform );
-    b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
+    b.setAttribute('data-useragent', navigator.userAgent);
+    b.setAttribute('data-platform', navigator.platform);
+    b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window)) ? ' touch' : '');
 </script>
 </body>
 </html>

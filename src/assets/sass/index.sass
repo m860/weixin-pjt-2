@@ -2,9 +2,13 @@
 html, body
   height: 100%
   overflow: hidden
+  font-size: 66.6%
 
 *
   display: flex !important
+
+.hide
+  display: none !important
 
 .page
   position: absolute
@@ -13,6 +17,12 @@ html, body
   bottom: 0
   right: 0
   transition: all 0.5s
+
+.footer-1
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
 
 .page-init
   transform: translateX(100%)
@@ -34,11 +44,48 @@ html, body
     background-size: 70%
     height: 100px
     width: 100%
-  .progress
+  .progress-wrapper
+    width: 100%
+    height: 50px
+    justify-content: center
+    align-items: center
+    position: relative
+    img
+      width: 50px
+      height: 50px
+      position: absolute
+    .progress
+      border: solid 1px #ffd280
+      height: 30px
+      width: 60%
+      border-radius: 30px
+      .progress-value
+        height: 30px
+        background-color: #ffd280
+        border-bottom-left-radius: 30px
+        border-top-left-radius: 30px
+        transition: all 0.1s
+      .progress-value-full
+        border-radius: 30px
+  .progress-text
+    margin-top: 10px
+    width: 100%
+    height: 30px
+    justify-content: center
+    font-size: 2.6rem
+    color: #f7f2e7
 
 .page-2
   z-index: 20
-  background-color: green
+  background-image: url('../img/bg-1.png')
+  background-repeat: no-repeat
+  background-size: 100%
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  .btn-start
+    width: 26%
+    margin-top: 5px
 .page-3
   z-index: 30
   background-color: blue
@@ -122,11 +169,11 @@ html, body
   background-repeat: no-repeat
   background-size: 100%
   background-position: center
-  width: 100px
-  height: 100px
+  width: 100%
+  background-image: url('../img/kf-scene-1/1.png')
 .begin-active
   animation-name: kf-begin
-  animation-duration: 30s
+  animation-duration: 5s
   animation-iteration-count: 1
   animation-timing-function: steps(1)
   background-image: url('../img/kf-scene-1/37.png')
