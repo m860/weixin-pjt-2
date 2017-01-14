@@ -183,6 +183,18 @@ function showResult(){
 $('.btn-rule').on('click',showRule)
 $('.btn-result').on('click',showResult)
 
+function ok(){
+	$('#btn-ok,#form-mobile').addClass('hidden');
+	$('#btn-modify,#text-mobile').removeClass('hidden')
+	$('#lblMobile').text($('#txtMobile').val());
+}
+$('#btn-ok').on('click',ok);
+function modify(){
+	$('#btn-ok,#form-mobile').removeClass('hidden');
+	$('#btn-modify,#text-mobile').addClass('hidden')
+}
+$('#btn-modify').on('click',modify);
+
 loadAssets(event=>{
 	let value=Math.floor(event.progress*100);
     eleProgressText.text(`${value}%`)
