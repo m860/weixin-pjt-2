@@ -219,15 +219,27 @@ loadAssets(event=>{
 			}).on('animationend webkitAnimationEnd',()=>{
 				eleBtnsWrapper.removeClass('hidden2')
 				eleBegin.attr('class','loop');
-				btnStart.unbind().on('click',()=>{
+
+				btnStart.unbind().on('mousedown touchstart webkitTouchStart',()=>{
 					eleBegin.addClass('hidden')
-					eleBtnsWrapper.addClass('hidden2')
 					eleGame.removeClass('hidden').css({
 						height:`${viewHeight}px`
-					}).on('animationend webkitAnimationEnd',event=>{
-						showRedbag()
 					})
-				});
+				}).on('mouseup touchend webkitTouchEnd',()=>{
+					eleGame.unbind().on('animationend webkitAnimationEnd',event=>{
+						eleGame.addClass('hidden')
+						showRedbag()
+					}).removeClass('game').addClass('game-done')
+				})
+				// btnStart.unbind().on('click',()=>{
+				// 	eleBegin.addClass('hidden')
+				// 	eleBtnsWrapper.addClass('hidden2')
+				// 	eleGame.removeClass('hidden').css({
+				// 		height:`${viewHeight}px`
+				// 	}).on('animationend webkitAnimationEnd',event=>{
+				// 		showRedbag()
+				// 	})
+				// });
 			});
 
 		})

@@ -194,7 +194,7 @@ input,button
   background-image: url('../img/kf-scene-1/1.png')
 .begin-active
   animation-name: kf-begin
-  animation-duration: 5s
+  animation-duration: 3s
   animation-iteration-count: 1
   animation-timing-function: steps(1)
   background-image: url('../img/kf-scene-1/29.png')
@@ -255,7 +255,7 @@ input,button
 
 .loop
   animation-name: kf-loop
-  animation-duration: 5s
+  animation-duration: 3s
   background-size: 100% $viewHeight
   animation-iteration-count: infinite
   animation-timing-function: steps(1)
@@ -264,7 +264,7 @@ input,button
   background-position: center
 
 @keyframes kf-game
-  $unit: 100/20
+  $unit: 100/14
   #{$unit*0}%
     background-image: url('../img/kf-scene-1/53.png')
   #{$unit*1}%
@@ -293,26 +293,39 @@ input,button
     background-image: url('../img/kf-scene-1/65.png')
   #{$unit*13}%
     background-image: url('../img/kf-scene-1/66.png')
-  #{$unit*14}%
-    background-image: url('../img/kf-scene-1/67.png')
-  #{$unit*15}%
-    background-image: url('../img/kf-scene-1/68.png')
-  #{$unit*16}%
-    background-image: url('../img/kf-scene-1/69.png')
-  #{$unit*17}%
-    background-image: url('../img/kf-scene-1/70.png')
-  #{$unit*18}%
-    background-image: url('../img/kf-scene-1/71.png')
-  #{$unit*19}%
-    background-image: url('../img/kf-scene-1/72.png')
+
 .game
   animation-name: kf-game
   animation-duration: 5s
+  animation-iteration-count: infinite
+  animation-timing-function: steps(1)
+  width: 100%
+  background-position: center center
+  background-repeat: no-repeat
+
+@keyframes kf-game-done
+  $unit: 100/6
+  #{$unit*0}%
+    background-image: url('../img/kf-scene-1/67.png')
+  #{$unit*1}%
+    background-image: url('../img/kf-scene-1/68.png')
+  #{$unit*2}%
+    background-image: url('../img/kf-scene-1/69.png')
+  #{$unit*3}%
+    background-image: url('../img/kf-scene-1/70.png')
+  #{$unit*4}%
+    background-image: url('../img/kf-scene-1/71.png')
+  #{$unit*5}%
+    background-image: url('../img/kf-scene-1/72.png')
+.game-done
+  animation-name: kf-game-done
+  animation-duration: 1s
   animation-iteration-count: 1
   animation-timing-function: steps(1)
   width: 100%
   background-position: center center
   background-repeat: no-repeat
+
 
 .redbag
   width: 100%
