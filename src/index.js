@@ -107,24 +107,12 @@ function loadAssets(onProgress = ()=> {
 	assets.load();
 }
 
-
-$('.page-1 button').bind('click', ()=> {
-	goto('.page-2')
-})
-
-$('.page-2 button:first').bind('click', ()=> {
-	goto('.page-3')
-})
-$('.page-2 button.btn-back').bind('click', ()=> {
-	back()
-})
-
 let eleFlower=$('.progress-wrapper>img')
 	,eleProgressValue=$('.progress-value')
 	,eleProgressText=$('.progress-text');
 let progressPos=eleProgressValue.position();
 
-let viewHeight=window.innerWidth*0.70;
+let viewHeight=window.innerWidth*0.64;
 eleFlower.css({
 	left:eleProgressValue.position().left,
 	visibility:'visible'
@@ -169,7 +157,7 @@ function showRedbag(type){
 
 // 显示弹窗
 function toggleDialog(selector){
-	$(selector).toggleClass('hidden').find('.close').on('click',()=>{
+	$(selector).toggleClass('hidden').find('.close').unbind().on('click',()=>{
 		$(selector).toggleClass('hidden');
 	})
 }
@@ -201,7 +189,7 @@ loadAssets(event=>{
     eleProgressValue.css({width:`${value}%`})
 	if(value<100) {
         eleFlower.css({
-            left: progressPos.left + eleProgressValue.width()
+            left: progressPos.left + eleProgressValue.width()-eleFlower.width()/2
         })
     }
     else{
@@ -228,7 +216,7 @@ loadAssets(event=>{
 			})
     		eleBegin.addClass('begin-active').css({
             	height:`${viewHeight}px`
-			}).on('animationend',()=>{
+			}).on('animationend webkitAnimationEnd',()=>{
 				eleBtnsWrapper.removeClass('hidden2')
 				eleBegin.attr('class','loop');
 				btnStart.unbind().on('click',()=>{
@@ -236,7 +224,7 @@ loadAssets(event=>{
 					eleBtnsWrapper.addClass('hidden2')
 					eleGame.removeClass('hidden').css({
 						height:`${viewHeight}px`
-					}).on('animationend',event=>{
+					}).on('animationend webkitAnimationEnd',event=>{
 						showRedbag()
 					})
 				});
