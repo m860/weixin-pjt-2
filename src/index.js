@@ -228,7 +228,7 @@ loadAssets(event=>{
 					})
 				}).on('mouseup touchend webkitTouchEnd',(event)=>{
 					event.preventDefault();
-					eleGame.unbind().on('animationend webkitAnimationEnd',event=>{
+					eleGame.unbind().on('animationend webkitAnimationEnd',event2=>{
 						eleGame.addClass('hidden')
 						showRedbag()
 					}).removeClass('game').addClass('game-done')
