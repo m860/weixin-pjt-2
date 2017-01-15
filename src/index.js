@@ -111,7 +111,11 @@ let eleFlower=$('.progress-wrapper>img')
 	,eleProgressValue=$('.progress-value')
 	,eleProgressText=$('.progress-text');
 let progressPos=eleProgressValue.position();
-
+let eleBegin=$('.begin')
+    ,eleBtnsWrapper=$('.btns-wrapper')
+    ,btnStart=$('.btn-start')
+    ,btnBack=$('.page-2 .btn-back')
+    ,eleGame=$('.page-2 .game');
 let viewHeight=window.innerWidth*0.64;
 eleFlower.css({
 	left:eleProgressValue.position().left,
@@ -182,7 +186,19 @@ function modify(){
 	$('#btn-modify,#text-mobile').addClass('hidden')
 }
 $('#btn-modify').on('click',modify);
-
+btnStart.on('mousedown touchstart webkitTouchStart',(event)=>{
+    event.preventDefault();
+    eleBegin.addClass('hidden')
+    eleGame.removeClass('hidden').css({
+        height:`${viewHeight}px`
+    })
+}).on('mouseup touchend webkitTouchEnd',(event)=>{
+    event.preventDefault();
+    eleGame.unbind().on('animationend webkitAnimationEnd',event2=>{
+        eleGame.addClass('hidden')
+        showRedbag()
+    }).removeClass('game').addClass('game-done')
+})
 loadAssets(event=>{
 	let value=Math.floor(event.progress*100);
     eleProgressText.text(`${value}%`)
@@ -202,15 +218,11 @@ loadAssets(event=>{
 },()=>{
     setTimeout(()=>{
     	goto('.page-2',()=>{
-            let eleBegin=$('.begin')
-				,eleBtnsWrapper=$('.btns-wrapper')
-				,btnStart=$('.btn-start')
-				,btnBack=$('.page-2 .btn-back')
-				,eleGame=$('.page-2 .game');
+
 			btnBack.on('click',event=>{
 				btnBack.addClass('hidden')
 				btnStart.removeClass('hidden');
-				eleGame.addClass('hidden');
+				eleGame.addClass('hidden game').removeClass('game-done');
 				eleBegin.removeClass('hidden');
 				$('.page-2 .redbag').addClass('hidden')
 			})
@@ -220,19 +232,7 @@ loadAssets(event=>{
 				eleBtnsWrapper.removeClass('hidden2')
 				eleBegin.attr('class','loop');
 
-				btnStart.unbind().on('mousedown touchstart webkitTouchStart',(event)=>{
-					event.preventDefault();
-					eleBegin.addClass('hidden')
-					eleGame.removeClass('hidden').css({
-						height:`${viewHeight}px`
-					})
-				}).on('mouseup touchend webkitTouchEnd',(event)=>{
-					event.preventDefault();
-					eleGame.unbind().on('animationend webkitAnimationEnd',event2=>{
-						eleGame.addClass('hidden')
-						showRedbag()
-					}).removeClass('game').addClass('game-done')
-				})
+
 				// btnStart.unbind().on('click',()=>{
 				// 	eleBegin.addClass('hidden')
 				// 	eleBtnsWrapper.addClass('hidden2')
