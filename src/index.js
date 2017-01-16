@@ -120,6 +120,7 @@ let eleBegin=$('.begin')
     ,btnBack=$('.page-2 .btn-back')
     ,eleGame=$('.page-2 .game');
 let viewHeight=window.innerWidth*0.64;
+// let viewHeight=window.innerWidth;
 eleFlower.css({
 	left:eleProgressValue.position().left,
 	visibility:'visible'

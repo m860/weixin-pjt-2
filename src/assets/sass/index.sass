@@ -9,6 +9,7 @@ ul,ol,li,p
   margin: 0
 
 $viewHeight: auto
+$viewWidth: 64%
 
 input,button
   outline: none
@@ -203,7 +204,7 @@ input,button
   //  background-image: url('../img/kf-scene-1/37.png')
 .begin
   background-repeat: no-repeat
-  background-size: 100% $viewHeight
+  background-size: $viewWidth $viewHeight
   background-position: center
   width: 100%
   background-image: url('../img/kf-scene-1/1.png')
@@ -271,7 +272,7 @@ input,button
 .loop
   animation-name: kf-loop
   animation-duration: 3s
-  background-size: 100% $viewHeight
+  background-size: $viewWidth $viewHeight
   animation-iteration-count: infinite
   animation-timing-function: steps(1)
   width: 100%
@@ -315,6 +316,7 @@ input,button
   animation-iteration-count: infinite
   animation-timing-function: steps(1)
   width: 100%
+  background-size: $viewWidth $viewHeight
   background-position: center center
   background-repeat: no-repeat
 
@@ -338,6 +340,7 @@ input,button
   animation-iteration-count: 1
   animation-timing-function: steps(1)
   width: 100%
+  background-size: $viewWidth $viewHeight
   background-position: center center
   background-repeat: no-repeat
 
