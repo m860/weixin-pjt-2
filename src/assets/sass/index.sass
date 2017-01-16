@@ -14,7 +14,7 @@ $viewWidth: 64%
 input,button
   outline: none
 
-*
+section,div
   display: flex !important
 
 .hidden
@@ -69,7 +69,7 @@ input,button
       height: 50px
       position: absolute
       visibility: hidden
-      animation: kf-rotate 0.4s infinite linear
+      animation: kf-rotate 0.6s infinite linear
       transform-origin: center
     .progress
       $height: 20px
@@ -117,11 +117,16 @@ input,button
       width: 30%
     .links
       justify-content: space-around
-      width: 30%
+      flex-direction: row
+      width: 35%
       margin-top: 20px
       a
+        display: flex
+        flex: 1
         font-size: 1.2rem
         color: #e6ce6e
+        text-align: center
+        justify-content: center
 .page-3
   z-index: 30
   background-color: blue
@@ -423,6 +428,7 @@ input,button
           justify-content: center
         ol
           flex-direction: column
+          padding-left: 15px
         li
           line-height: 2rem
         .form
@@ -435,14 +441,19 @@ input,button
           p
             margin: 5px 0
           >div
+            flex-direction: row
             align-items: center
             background-color: #f36b21
             padding: 5px
             border-radius: 5px
+            label
+              display: flex
+              font-size: 1.2rem
             input
+              display: flex
               border-radius: 5px
               border: none
-              flex: 0.8
+              flex: 1
           button
             color: white
             //font-size: 1.4rem
