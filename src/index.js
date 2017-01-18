@@ -8,6 +8,7 @@ $(window).on('touchmove webkitTouchMove',event=>{
 })
 let routerSelector = ['page-1'];
 
+
 let resources=[
 	{id:'kf-1-1',src:require('./assets/img/kf-scene-1/1.png')}
 	,{id:'kf-1-2',src:require('./assets/img/kf-scene-1/2.png')}
@@ -119,7 +120,7 @@ let eleBegin=$('.begin')
     ,btnStart=$('.btn-start')
     ,btnBack=$('.page-2 .btn-back')
     ,eleGame=$('.page-2 .game');
-let viewHeight=window.innerWidth*0.64;
+let viewHeight=window.innerWidth;
 // let viewHeight=window.innerWidth;
 eleFlower.css({
 	left:eleProgressValue.position().left,
