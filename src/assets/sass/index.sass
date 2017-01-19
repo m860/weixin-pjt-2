@@ -12,7 +12,7 @@ $viewHeight: auto
 $viewWidth: 100%
 
 @keyframes kf-btn-start-animation
-  $unit: 13/100
+  $unit: 100/13
   #{$unit*0}%
     background-image: url('../img/tn-start-00000.png')
   #{$unit*1}%
@@ -140,15 +140,16 @@ section,div,.btn-back
     flex-direction: column
     .btn-start
       width: 30%
-      background: url('../img/btn-start.png') no-repeat center center / 100%
+      background: url('../img/tn-start-00000.png') no-repeat center center / 100%
       border: none
       height: 48px
     .btn-start-animation
       animation-name: kf-btn-start-animation
       animation-duration: 1s
-      //animation-iteration-count: 1
-      animation-iteration-count: infinite
+      animation-iteration-count: 1
+      //animation-iteration-count: infinite
       animation-timing-function: steps(1)
+      background-image: url('../img/tn-start-00012.png')
     .btn-back
       width: 30%
     .links
