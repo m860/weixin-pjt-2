@@ -83,6 +83,19 @@ let resources=[
 	,{id:'kf-1-71',src:require('./assets/img/kf-scene-1/71.png')}
 	,{id:'kf-1-72',src:require('./assets/img/kf-scene-1/72.png')}
 	,{id:'flower',src:require('./assets/img/flower.png')}
+	,{id:'btn-start-1',src:require('./assets/img/tn-start-00000.png')}
+	,{id:'btn-start-2',src:require('./assets/img/tn-start-00001.png')}
+	,{id:'btn-start-3',src:require('./assets/img/tn-start-00002.png')}
+	,{id:'btn-start-4',src:require('./assets/img/tn-start-00003.png')}
+	,{id:'btn-start-5',src:require('./assets/img/tn-start-00004.png')}
+	,{id:'btn-start-6',src:require('./assets/img/tn-start-00005.png')}
+	,{id:'btn-start-7',src:require('./assets/img/tn-start-00006.png')}
+	,{id:'btn-start-8',src:require('./assets/img/tn-start-00007.png')}
+	,{id:'btn-start-9',src:require('./assets/img/tn-start-00008.png')}
+	,{id:'btn-start-10',src:require('./assets/img/tn-start-00009.png')}
+	,{id:'btn-start-11',src:require('./assets/img/tn-start-00010.png')}
+	,{id:'btn-start-12',src:require('./assets/img/tn-start-00011.png')}
+	,{id:'btn-start-13',src:require('./assets/img/tn-start-00012.png')}
 ];
 
 
@@ -194,11 +207,13 @@ $('#btn-modify').on('click',modify);
 btnStart.on('mousedown touchstart webkitTouchStart',(event)=>{
     event.preventDefault();
     eleBegin.addClass('hidden')
+    btnStart.addClass("btn-start-animation")
     eleGame.removeClass('hidden').css({
         height:`${viewHeight}px`
     })
 }).on('mouseup touchend webkitTouchEnd',(event)=>{
     event.preventDefault();
+    btnStart.removeClass("btn-start-animation")
     eleGame.unbind().on('animationend webkitAnimationEnd',event2=>{
         eleGame.addClass('hidden')
         showRedbag()

@@ -11,6 +11,36 @@ ul,ol,li,p
 $viewHeight: auto
 $viewWidth: 100%
 
+@keyframes kf-btn-start-animation
+  $unit: 13/100
+  #{$unit*0}%
+    background-image: url('../img/tn-start-00000.png')
+  #{$unit*1}%
+    background-image: url('../img/tn-start-00001.png')
+  #{$unit*2}%
+    background-image: url('../img/tn-start-00002.png')
+  #{$unit*3}%
+    background-image: url('../img/tn-start-00003.png')
+  #{$unit*4}%
+    background-image: url('../img/tn-start-00004.png')
+  #{$unit*5}%
+    background-image: url('../img/tn-start-00005.png')
+  #{$unit*6}%
+    background-image: url('../img/tn-start-00006.png')
+  #{$unit*7}%
+    background-image: url('../img/tn-start-00007.png')
+  #{$unit*8}%
+    background-image: url('../img/tn-start-00008.png')
+  #{$unit*9}%
+    background-image: url('../img/tn-start-00009.png')
+  #{$unit*10}%
+    background-image: url('../img/tn-start-00010.png')
+  #{$unit*11}%
+    background-image: url('../img/tn-start-00011.png')
+  #{$unit*12}%
+    background-image: url('../img/tn-start-00012.png')
+
+
 input,button
   outline: none
 
@@ -113,6 +143,12 @@ section,div,.btn-back
       background: url('../img/btn-start.png') no-repeat center center / 100%
       border: none
       height: 48px
+    .btn-start-animation
+      animation-name: kf-btn-start-animation
+      animation-duration: 1s
+      //animation-iteration-count: 1
+      animation-iteration-count: infinite
+      animation-timing-function: steps(1)
     .btn-back
       width: 30%
     .links
@@ -130,6 +166,7 @@ section,div,.btn-back
 .page-3
   z-index: 30
   background-color: blue
+
 
 @keyframes kf-begin
   $unit: 100/29
