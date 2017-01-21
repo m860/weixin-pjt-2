@@ -3,9 +3,9 @@
  */
 require('normalize.css');
 require('./assets/sass/index.sass');
-$(window).on('touchmove webkitTouchMove',event=>{
-	event.preventDefault()
-})
+// $(window).on('touchmove webkitTouchMove',event=>{
+// 	// event.preventDefault()
+// })
 let routerSelector = ['page-1'];
 
 
